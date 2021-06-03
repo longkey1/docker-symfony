@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := help
 
 repo := longkey1/php
-tags :=
+tags := 7.3 7.4 8.0
 
 define build_git_branch
 	git checkout master
@@ -12,7 +12,6 @@ define build_git_branch
 	git commit -am "Change base image to $(repo):$(1)"
 	git push origin $(1) --force-with-lease
 	git checkout master
-
 endef
 
 define build_docker_image
@@ -21,7 +20,6 @@ define build_docker_image
 		exit 1; \
 	fi
 	curl -H "Content-Type: application/json" --data "{\"source_type\": \"Branch\", \"source_name\": \"$(1)\"}" -X POST $(TRIGGER_URL)
-
 endef
 
 .PHONY: build
