@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := help
 
-repo := symfonycorp/cli
+repo := longkey1/php
 tags :=
 
 define build_git_branch
