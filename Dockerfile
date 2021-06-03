@@ -8,4 +8,4 @@ RUN wget https://get.symfony.com/cli/installer -O - | bash
 RUN mv ${HOME}/.symfony/bin/symfony /usr/local/bin/symfony
 
 # Confirm symfonyversion
-RUN symfony --version
+#RUN symfony --version
