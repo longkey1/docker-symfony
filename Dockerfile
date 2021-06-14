@@ -1,7 +1,7 @@
-FROM longkey1/php:latest
+FROM ghcr.io/longkey1/php
 
 # Install dependency packages
-RUN apt-get -y update && apt-get -y install wget
+RUN apt-get -y update && apt-get -y install git wget
 
 # Install symfony-cli
 RUN wget https://get.symfony.com/cli/installer -O - | bash
