@@ -1,4 +1,4 @@
-FROM ghcr.io/longkey1/php
+FROM ghcr.io/longkey1/php:latest
 
 # Install dependency packages
 RUN apt-get -y update && apt-get -y install git wget
