@@ -1,14 +1,12 @@
-name: publish
+name: build_and_publish_image
 
 on:
   push:
     branches-ignore:
       - master
-  schedule:
-    - cron: '0 0 * * 0'
 
 jobs:
-  build_and_publish:
+  build_and_publish_image:
     runs-on: ubuntu-latest
     env:
       IMAGE_NAME: symfony
@@ -24,7 +22,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.GH_PAT }}
 
       - name: Extract branch name
         shell: bash
