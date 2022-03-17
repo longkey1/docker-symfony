@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := help
 
 repo := ghcr.io/longkey1/php
-tags := 7.3 7.4 8.0
+tags := latest 7.3 7.4 8.0 8.1
 
 define build_git_branch
 	git checkout master
