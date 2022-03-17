@@ -7,5 +7,5 @@ RUN apt-get -y update && apt-get -y install git wget
 RUN wget https://get.symfony.com/cli/installer -O - | bash
 RUN mv ${HOME}/.symfony/bin/symfony /usr/local/bin/symfony
 
-# Confirm symfonyversion
+# Confirm symfony version
 RUN symfony version
