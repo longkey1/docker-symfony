@@ -1,11 +1,13 @@
 FROM ghcr.io/longkey1/php:latest
 
 # Install dependency packages
-RUN apt-get -y update && apt-get -y install git wget
+RUN apt update && apt -y install wget
 
 # Install symfony-cli
+# ref https://symfony.com/download#step-1-install-symfony-cli
 RUN wget https://get.symfony.com/cli/installer -O - | bash
-RUN mv ${HOME}/.symfony/bin/symfony /usr/local/bin/symfony
+RUN curl -1sLf 'https://dl.cloudsmith.io/public/symfony/stable/setup.deb.sh' | bash
+RUN apt install symfony-cli
 
 # Confirm symfony version
 RUN symfony version
