@@ -7,7 +7,7 @@ RUN apt update && apt -y install wget
 # ref https://symfony.com/download#step-1-install-symfony-cli
 RUN wget https://get.symfony.com/cli/installer -O - | bash
 RUN curl -1sLf 'https://dl.cloudsmith.io/public/symfony/stable/setup.deb.sh' | bash
-RUN apt install symfony-cli
+RUN apt -y install symfony-cli
 
 # Confirm symfony version
 RUN symfony version
